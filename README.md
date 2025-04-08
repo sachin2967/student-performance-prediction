@@ -29,5 +29,4 @@ The trained Random Forest Classifier achieved the following results:
 [[ 14 7]
 [ 1 187]]
 
-text
 These results demonstrate the model's ability to accurately predict students' performance, with minimal false positives and false negatives.
