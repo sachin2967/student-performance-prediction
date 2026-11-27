@@ -1,0 +1,991 @@
+{
+  "command": [
+    "python",
+    "scripts/evaluate.py",
+    "--output",
+    "eval/cross_validation.json"
+  ],
+  "dataset": {
+    "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00320/student.zip",
+    "file": "student-por.csv",
+    "sha256": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f",
+    "rows": 649
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0"
+  },
+  "split": {
+    "method": "StratifiedKFold",
+    "folds": 5,
+    "shuffle": true,
+    "seed": 42
+  },
+  "confusion_matrix_labels": [
+    "fail",
+    "pass"
+  ],
+  "zero_division": 0,
+  "results_by_pass_mark": {
+    "8": {
+      "majority_class": {
+        "out_of_fold": {
+          "accuracy": 0.9537750385208013,
+          "confusion_matrix": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              619
+            ]
+          ],
+          "classes": {
+            "fail": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 30
+            },
+            "pass": {
+              "precision": 0.9537750385208013,
+              "recall": 1.0,
+              "support": 619
+            }
+          }
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 5,
+            "accuracy": 0.9534883720930233,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                123
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9534883720930233,
+                "recall": 1.0,
+                "support": 123
+              }
+            }
+          }
+        ]
+      },
+      "random_forest": {
+        "out_of_fold": {
+          "accuracy": 0.963020030816641,
+          "confusion_matrix": [
+            [
+              6,
+              24
+            ],
+            [
+              0,
+              619
+            ]
+          ],
+          "classes": {
+            "fail": {
+              "precision": 1.0,
+              "recall": 0.2,
+              "support": 30
+            },
+            "pass": {
+              "precision": 0.9626749611197511,
+              "recall": 1.0,
+              "support": 619
+            }
+          }
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "accuracy": 0.9769230769230769,
+            "confusion_matrix": [
+              [
+                3,
+                3
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.5,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9763779527559056,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "accuracy": 0.9615384615384616,
+            "confusion_matrix": [
+              [
+                1,
+                5
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.16666666666666666,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9612403100775194,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "accuracy": 0.9615384615384616,
+            "confusion_matrix": [
+              [
+                1,
+                5
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.16666666666666666,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9612403100775194,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 5,
+            "accuracy": 0.9612403100775194,
+            "confusion_matrix": [
+              [
+                1,
+                5
+              ],
+              [
+                0,
+                123
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.16666666666666666,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9609375,
+                "recall": 1.0,
+                "support": 123
+              }
+            }
+          }
+        ]
+      },
+      "random_forest_without_g1_g2": {
+        "out_of_fold": {
+          "accuracy": 0.9553158705701078,
+          "confusion_matrix": [
+            [
+              1,
+              29
+            ],
+            [
+              0,
+              619
+            ]
+          ],
+          "classes": {
+            "fail": {
+              "precision": 1.0,
+              "recall": 0.03333333333333333,
+              "support": 30
+            },
+            "pass": {
+              "precision": 0.9552469135802469,
+              "recall": 1.0,
+              "support": 619
+            }
+          }
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "accuracy": 0.9538461538461539,
+            "confusion_matrix": [
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                124
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9538461538461539,
+                "recall": 1.0,
+                "support": 124
+              }
+            }
+          },
+          {
+            "fold": 5,
+            "accuracy": 0.9612403100775194,
+            "confusion_matrix": [
+              [
+                1,
+                5
+              ],
+              [
+                0,
+                123
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.16666666666666666,
+                "support": 6
+              },
+              "pass": {
+                "precision": 0.9609375,
+                "recall": 1.0,
+                "support": 123
+              }
+            }
+          }
+        ]
+      }
+    },
+    "10": {
+      "majority_class": {
+        "out_of_fold": {
+          "accuracy": 0.8459167950693375,
+          "confusion_matrix": [
+            [
+              0,
+              100
+            ],
+            [
+              0,
+              549
+            ]
+          ],
+          "classes": {
+            "fail": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 100
+            },
+            "pass": {
+              "precision": 0.8459167950693375,
+              "recall": 1.0,
+              "support": 549
+            }
+          }
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "accuracy": 0.8461538461538461,
+            "confusion_matrix": [
+              [
+                0,
+                20
+              ],
+              [
+                0,
+                110
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8461538461538461,
+                "recall": 1.0,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "accuracy": 0.8461538461538461,
+            "confusion_matrix": [
+              [
+                0,
+                20
+              ],
+              [
+                0,
+                110
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8461538461538461,
+                "recall": 1.0,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "accuracy": 0.8461538461538461,
+            "confusion_matrix": [
+              [
+                0,
+                20
+              ],
+              [
+                0,
+                110
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8461538461538461,
+                "recall": 1.0,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "accuracy": 0.8461538461538461,
+            "confusion_matrix": [
+              [
+                0,
+                20
+              ],
+              [
+                0,
+                110
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8461538461538461,
+                "recall": 1.0,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 5,
+            "accuracy": 0.8449612403100775,
+            "confusion_matrix": [
+              [
+                0,
+                20
+              ],
+              [
+                0,
+                109
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8449612403100775,
+                "recall": 1.0,
+                "support": 109
+              }
+            }
+          }
+        ]
+      },
+      "random_forest": {
+        "out_of_fold": {
+          "accuracy": 0.9244992295839753,
+          "confusion_matrix": [
+            [
+              65,
+              35
+            ],
+            [
+              14,
+              535
+            ]
+          ],
+          "classes": {
+            "fail": {
+              "precision": 0.8227848101265823,
+              "recall": 0.65,
+              "support": 100
+            },
+            "pass": {
+              "precision": 0.9385964912280702,
+              "recall": 0.9744990892531876,
+              "support": 549
+            }
+          }
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "accuracy": 0.9384615384615385,
+            "confusion_matrix": [
+              [
+                15,
+                5
+              ],
+              [
+                3,
+                107
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.8333333333333334,
+                "recall": 0.75,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.9553571428571429,
+                "recall": 0.9727272727272728,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "accuracy": 0.9230769230769231,
+            "confusion_matrix": [
+              [
+                13,
+                7
+              ],
+              [
+                3,
+                107
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.8125,
+                "recall": 0.65,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.9385964912280702,
+                "recall": 0.9727272727272728,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "accuracy": 0.9307692307692308,
+            "confusion_matrix": [
+              [
+                16,
+                4
+              ],
+              [
+                5,
+                105
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.7619047619047619,
+                "recall": 0.8,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.963302752293578,
+                "recall": 0.9545454545454546,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "accuracy": 0.9307692307692308,
+            "confusion_matrix": [
+              [
+                11,
+                9
+              ],
+              [
+                0,
+                110
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.55,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.9243697478991597,
+                "recall": 1.0,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 5,
+            "accuracy": 0.8992248062015504,
+            "confusion_matrix": [
+              [
+                10,
+                10
+              ],
+              [
+                3,
+                106
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.7692307692307693,
+                "recall": 0.5,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.9137931034482759,
+                "recall": 0.9724770642201835,
+                "support": 109
+              }
+            }
+          }
+        ]
+      },
+      "random_forest_without_g1_g2": {
+        "out_of_fold": {
+          "accuracy": 0.8582434514637904,
+          "confusion_matrix": [
+            [
+              16,
+              84
+            ],
+            [
+              8,
+              541
+            ]
+          ],
+          "classes": {
+            "fail": {
+              "precision": 0.6666666666666666,
+              "recall": 0.16,
+              "support": 100
+            },
+            "pass": {
+              "precision": 0.8656,
+              "recall": 0.9854280510018215,
+              "support": 549
+            }
+          }
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "accuracy": 0.8538461538461538,
+            "confusion_matrix": [
+              [
+                4,
+                16
+              ],
+              [
+                3,
+                107
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.5714285714285714,
+                "recall": 0.2,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8699186991869918,
+                "recall": 0.9727272727272728,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "accuracy": 0.8692307692307693,
+            "confusion_matrix": [
+              [
+                6,
+                14
+              ],
+              [
+                3,
+                107
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.6666666666666666,
+                "recall": 0.3,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8842975206611571,
+                "recall": 0.9727272727272728,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "accuracy": 0.8692307692307693,
+            "confusion_matrix": [
+              [
+                3,
+                17
+              ],
+              [
+                0,
+                110
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 1.0,
+                "recall": 0.15,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8661417322834646,
+                "recall": 1.0,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "accuracy": 0.8538461538461538,
+            "confusion_matrix": [
+              [
+                3,
+                17
+              ],
+              [
+                2,
+                108
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.6,
+                "recall": 0.15,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.864,
+                "recall": 0.9818181818181818,
+                "support": 110
+              }
+            }
+          },
+          {
+            "fold": 5,
+            "accuracy": 0.8449612403100775,
+            "confusion_matrix": [
+              [
+                0,
+                20
+              ],
+              [
+                0,
+                109
+              ]
+            ],
+            "classes": {
+              "fail": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "support": 20
+              },
+              "pass": {
+                "precision": 0.8449612403100775,
+                "recall": 1.0,
+                "support": 109
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
