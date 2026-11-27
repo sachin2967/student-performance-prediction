@@ -1,32 +1,64 @@
-# Student Performance Prediction
+# Student Pass/Fail Prediction (UCI Student Performance)
 
-## Description
-The **Student Performance Prediction** project aims to predict whether students will pass or fail based on their academic, social, and demographic attributes. Using data from Portuguese schools, this project applies machine learning techniques such as Random Forest Classifier to classify students into binary categories ("pass" or "fail") based on their final grades (`G3`). The pipeline includes data preprocessing, exploratory data analysis (EDA), feature engineering, and model training. The project achieves high accuracy in predictions and provides insights into factors affecting student performance.
+Predicts whether a student passes the final grade (`G3`) from school, family, social and
+earlier-grade attributes, using a Random Forest on the UCI
+[Student Performance](https://archive.ics.uci.edu/dataset/320/student+performance) data
+(Portuguese secondary schools, Mathematics and Portuguese-language courses).
 
----
+## Method
 
-## Features
-- **Data Preprocessing**:
-  - Handles missing values for numerical and categorical variables.
-  - Encodes binary categorical variables using Label Encoding.
-  - Encodes nominal categorical variables using One-Hot Encoding.
-  - Normalizes numerical features using StandardScaler.
-- **Exploratory Data Analysis (EDA)**:
-  - Visualizes the distribution of grades (`G3`) and other key features.
-  - Summarizes data statistics and identifies missing values.
-- **Machine Learning Model**:
-  - Implements a Random Forest Classifier for binary classification.
-  - Achieves high accuracy (96.17%) in predicting student performance.
-- **Evaluation Metrics**:
-  - Provides accuracy scores and confusion matrix for model evaluation.
+1. Download the UCI archive and concatenate the Portuguese (`student-por`) and Mathematics
+   (`student-mat`) files.
+2. Turn the final grade into a label: **pass = `G3 >= 8`**, otherwise fail. (The Portuguese
+   grading scale is 0-20 with 10 as the usual pass mark, so 8 is a more lenient, project-specific
+   cut-off.)
+3. Fill missing values, label-encode binary columns, one-hot encode nominal columns, and
+   standardize numeric features.
+4. Random split 80 / 20 (seed 42), then train a Random Forest (200 trees).
 
----
+## Result
 
-## Results Summary
-The trained Random Forest Classifier achieved the following results:
-- **Accuracy**: 96.17%
-- **Confusion Matrix**:
-[[ 14 7]
-[ 1 187]]
+On the 209 held-out students:
 
-These results demonstrate the model's ability to accurately predict students' performance, with minimal false positives and false negatives.
+| | Predicted fail | Predicted pass |
+| --- | ---: | ---: |
+| **Actual fail** (21) | 14 | 7 |
+| **Actual pass** (188) | 1 | 187 |
+
+- Accuracy **96.2%**.
+- Fail class: precision 14/15 = 0.93, recall 14/21 = 0.67.
+
+## How to read this result
+
+- **Class imbalance.** 90% of the test students pass, so always predicting "pass" already
+  scores about 90%. The model's real value is in catching failures, and it finds two thirds of
+  them.
+- **Earlier grades are inputs.** The features include the period grades `G1` and `G2`, which
+  are very strong predictors of `G3`. The model therefore mostly says "students who passed
+  earlier terms pass again", not what social or demographic factors drive outcomes. A more
+  useful early-warning model would drop `G1` and `G2`.
+- **Possible overlap between files.** The UCI documentation notes that some students appear in
+  both course files. After concatenating and randomly splitting, the same student can land in
+  train and test, which can inflate the score.
+- Single split, single seed, no cross-validation or confidence interval.
+
+## Run
+
+```bash
+git clone https://github.com/sachin2967/student-performance-prediction.git
+cd student-performance-prediction
+python -m venv .venv && source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+jupyter notebook Student_Performance.ipynb   # downloads the data from UCI on first run
+```
+
+## Next steps
+
+1. Remove `G1`/`G2` and compare; report precision/recall per class.
+2. Split by student so no one appears in both train and test; add cross-validation.
+3. Use the standard pass mark (`G3 >= 10`) and compare against a majority-class baseline.
+
+## License
+
+MIT. The dataset is from the UCI Machine Learning Repository; see its page for terms and the
+original citation (Cortez and Silva, 2008).
