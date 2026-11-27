@@ -1,9 +1,14 @@
 # Student Pass/Fail Prediction (UCI Student Performance)
 
-Predicts whether a student passes the final grade (`G3`) from school, family, social and
-earlier-grade attributes, using a Random Forest on the UCI
+A Random Forest classification exercise on the UCI
 [Student Performance](https://archive.ics.uci.edu/dataset/320/student+performance) data
-(Portuguese secondary schools, Mathematics and Portuguese-language courses).
+(Portuguese secondary schools, Mathematics and Portuguese-language courses). It predicts
+a project-defined pass/fail label from earlier grades and other recorded attributes; it is
+not a validated student early-warning system.
+
+**Project notebook:** [Open `Student_Performance.ipynb`](https://github.com/sachin2967/student-performance-prediction/blob/main/Student_Performance.ipynb). This is a reproducible notebook project, not a hosted interactive app.
+
+> **Important interpretation:** the model includes `G1` and `G2`, uses a lenient project-specific pass threshold of `G3 >= 8`, and may place the same student in both train and test when the two course files are concatenated. Treat the reported result as an exploratory exercise, not evidence of generalizable early prediction.
 
 ## Method
 
